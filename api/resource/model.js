@@ -11,6 +11,7 @@ async function getAllResources(){
 async function postResource(resource) {
     const [row] = await db('resources').insert(resource);
     const [newRow] = await db('resources')
+        .where('resource_id', row)
     
     return newRow
   }
