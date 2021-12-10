@@ -1,6 +1,21 @@
 // build your `Resource` model here
-function getAllResources(){
-    return Promise.resolve(`Resources are on the way!`)
+const db =require('../../data/dbConfig')
+
+async function getAllResources(){
+    const rows = await db('resources')
+    
+    return rows
+
 }
 
-module.exports={ getAllResources }
+async function postResource(resource) {
+    const [row] = await db('resources').insert(resource);
+    const [newRow] = await db('resources')
+    
+    return newRow
+  }
+
+module.exports={ 
+    getAllResources,
+    postResource
+ }

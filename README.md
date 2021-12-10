@@ -52,7 +52,7 @@ Build the migration(s) in Knex inside the `data/migrations` folder using appropr
 
   - [x ] `resource_id` - primary key
   - [ x] `resource_name` - required and unique
-  - [ ] `resource_description` - optional
+  - [ x] `resource_description` - optional
 
 - [ x] A **task** is one of the steps needed to complete a project and is stored in a `tasks` table with the following columns:
 
